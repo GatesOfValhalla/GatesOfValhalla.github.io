@@ -1,1 +1,1 @@
-"# GatesOfValhalla.github.io" 
+# GatesOfValhalla.github.io

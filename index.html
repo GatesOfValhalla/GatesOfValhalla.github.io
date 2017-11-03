@@ -5,11 +5,33 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gates of Valhalla</title>
+	<!-- for Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@tumblr">
+	<meta name="twitter:creator" content="@GatesOfValhalla">
+	<meta name="twitter:title" content="Gates of Valhalla">
+	<meta name="twitter:description" content="Welcome to the gates of Valhalla.">
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/GatesOfValhalla/GatesOfValhalla.github.io/master/images/black-and-white-forest_1500x500.jpg">
+	<!-- for Google -->
+	<meta name="title" content="Gates of Valhalla">
+	<meta name="description" content="Welcome to the gates of Valhalla.">
+	<meta name="keywords" content="GatesOfValhalla, Gates, Valhalla">
+	<meta name="image" content="https://raw.githubusercontent.com/GatesOfValhalla/GatesOfValhalla.github.io/master/images/black-and-white-forest_1500x500.jpg">
+	<meta name="author" content="GatesOfValhalla">
+	<!-- for Facebook -->
+	<meta property="og:url" content="https://GatesOfValhalla.github.io">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Gates of Valhalla">
+	<meta property="og:description" content="Welcome to the gates of Valhalla.">
+	<meta property="og:image" content="https://raw.githubusercontent.com/GatesOfValhalla/GatesOfValhalla.github.io/master/images/black-and-white-forest_1500x500.jpg">
+	<!--Other-->
+	<meta content="Gates of Valhalla">
+	<meta content="https://theorock.files.wordpress.com/2017/09/porn3.png">
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 	<!--Amatic+SC|Lobster|Libre+Baskervill|Rozha+One|-->
-	<title>Gates of Valhalla</title>
 	<style>
 		html,
 		body {
@@ -57,13 +79,20 @@
 			background: transparent;
 			font-family: 'Cinzel', cursive;
 		}
-		
+
 		#menu {
 			width: 100%;
-			border-top:1px solid white;
+			border-top: 1px solid white;
 			border-bottom: 1px solid white;
 			font-family: inherit;
 		}
+
+		#home,
+		#links,
+		#about {
+			cursor: pointer;
+		}
+
 		#contents {
 			float: left;
 			width: 100%;
@@ -78,12 +107,41 @@
 <body>
 	<div id="container">
 		<div id="heading">Gates of Valhalla</div>
-		<div id="menu">Home | Links | About</div>
+		<div id="menu"><span id="home">Home</span> | <span id="links">Links</span> | <span id="about">About</span></div>
 		<div id="contents">
-
 		</div>
-		<!--<img src="https://vignette.wikia.nocookie.net/vikingstv/images/a/ae/0186.jpg">-->
 	</div>
 </body>
+<script>
+	document.addEventListener('click', function (el) {
+		var vtext = null;
+		var elem = null;
+		switch (el.target.id) {
+			case 'home':
+				vtext = "You are home!";
+				el.target.style.textDecoration = "underline"
+				el.target.nextElementSibling.style.textDecoration = "none";
+				el.target.nextElementSibling.nextElementSibling.style.textDecoration = "none";
+				break;
+			case 'links':
+				vtext = "Here are some links";
+				el.target.style.textDecoration = "underline"
+				el.target.previousElementSibling.style.textDecoration = "none";
+				el.target.nextElementSibling.style.textDecoration = "none";
+				break;
+			case 'about':
+				vtext = "Here's your about";
+				el.target.style.textDecoration = "underline"
+				el.target.previousElementSibling.style.textDecoration = "none";
+				el.target.previousElementSibling.previousElementSibling.style.textDecoration = "none";
+				break;
+		}
+		var content = document.querySelector('#contents');
+		contents.innerText = vtext;
+	});
+	//document.querySelector('#home').addEventListener('click', function(e) {
+
+	//});
+</script>
 
 </html>
