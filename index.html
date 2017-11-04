@@ -92,7 +92,9 @@
 		#about {
 			cursor: pointer;
 		}
-
+		#home {
+			text-decoration: underline;
+		}
 		#contents {
 			float: left;
 			width: 100%;
@@ -108,40 +110,31 @@
 	<div id="container">
 		<div id="heading">Gates of Valhalla</div>
 		<div id="menu"><span id="home">Home</span> | <span id="links">Links</span> | <span id="about">About</span></div>
-		<div id="contents">
-		</div>
+		<div id="contents">Coming soon!</div>
 	</div>
 </body>
 <script>
-	document.addEventListener('click', function (el) {
-		var vtext = null;
-		var elem = null;
-		switch (el.target.id) {
-			case 'home':
-				vtext = "You are home!";
-				el.target.style.textDecoration = "underline"
-				el.target.nextElementSibling.style.textDecoration = "none";
-				el.target.nextElementSibling.nextElementSibling.style.textDecoration = "none";
-				break;
-			case 'links':
-				vtext = "Here are some links";
-				el.target.style.textDecoration = "underline"
-				el.target.previousElementSibling.style.textDecoration = "none";
-				el.target.nextElementSibling.style.textDecoration = "none";
-				break;
-			case 'about':
-				vtext = "Here's your about";
-				el.target.style.textDecoration = "underline"
-				el.target.previousElementSibling.style.textDecoration = "none";
-				el.target.previousElementSibling.previousElementSibling.style.textDecoration = "none";
-				break;
-		}
+	document.querySelector('#home').addEventListener('click', function(el) {
+		el.target.style.textDecoration = "underline"
+		el.target.nextElementSibling.style.textDecoration = "none";
+		el.target.nextElementSibling.nextElementSibling.style.textDecoration = "none";
 		var content = document.querySelector('#contents');
-		contents.innerText = vtext;
+		content.innerText = "Coming soon!";
 	});
-	//document.querySelector('#home').addEventListener('click', function(e) {
-
-	//});
+	document.querySelector('#links').addEventListener('click', function(el) {
+		el.target.style.textDecoration = "underline"
+		el.target.previousElementSibling.style.textDecoration = "none";
+		el.target.nextElementSibling.style.textDecoration = "none";
+		var content = document.querySelector('#contents');
+		content.innerText = "Here are some links";
+	});
+	document.querySelector('#about').addEventListener('click', function(el) {
+		el.target.style.textDecoration = "underline"
+		el.target.previousElementSibling.style.textDecoration = "none";
+		el.target.previousElementSibling.previousElementSibling.style.textDecoration = "none";
+		var content = document.querySelector('#contents');
+		content.innerText = "Here's your about";
+	});
 </script>
 
 </html>
