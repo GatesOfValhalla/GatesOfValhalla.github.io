@@ -110,7 +110,9 @@
 	<div id="container">
 		<div id="heading">Gates of Valhalla</div>
 		<div id="menu"><span id="home">Home</span> | <span id="links">Links</span> | <span id="about">About</span></div>
-		<div id="contents">Coming soon!</div>
+		<div id="contents">
+			<p>Welcome to the gate of Valhalla.</p>
+			<p>Future home to a wealth of information of Jewish subverion from slavery to prescribed drug addictions.</p>
 	</div>
 </body>
 <script>
@@ -119,21 +121,21 @@
 		el.target.nextElementSibling.style.textDecoration = "none";
 		el.target.nextElementSibling.nextElementSibling.style.textDecoration = "none";
 		var content = document.querySelector('#contents');
-		content.innerText = "Coming soon!";
+		content.innerHTML = "<p>Welcome to the gate of Valhalla.</p><p>Future home to a wealth of information of Jewish subverion from slavery to prescribed drug addictions.</p>";
 	});
 	document.querySelector('#links').addEventListener('click', function(el) {
 		el.target.style.textDecoration = "underline"
 		el.target.previousElementSibling.style.textDecoration = "none";
 		el.target.nextElementSibling.style.textDecoration = "none";
 		var content = document.querySelector('#contents');
-		content.innerText = "Here are some links";
+		content.innerText = "Links are coming soon.";
 	});
 	document.querySelector('#about').addEventListener('click', function(el) {
 		el.target.style.textDecoration = "underline"
 		el.target.previousElementSibling.style.textDecoration = "none";
 		el.target.previousElementSibling.previousElementSibling.style.textDecoration = "none";
 		var content = document.querySelector('#contents');
-		content.innerText = "Here's your about";
+		content.innerHTML = '<p>Welcome to the gate of Valhalla.</p>';
 	});
 </script>
 
