@@ -128,7 +128,7 @@
 		el.target.previousElementSibling.style.textDecoration = "none";
 		el.target.nextElementSibling.style.textDecoration = "none";
 		var content = document.querySelector('#contents');
-		content.innerText = "<p>Links are coming soon.</p>";
+		content.innerHTML = "<p>Links are coming soon.</p>";
 	});
 	document.querySelector('#about').addEventListener('click', function(el) {
 		el.target.style.textDecoration = "underline"
